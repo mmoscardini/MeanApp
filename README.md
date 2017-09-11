@@ -1,4 +1,4 @@
-Aplicação desenvolvida para aprimorar os conhecimentos do framework MEAN - MongoDB, Express, Angular & Nodejs
+Aplicação desenvolvida do zero para aprimorar os conhecimentos do framework MEAN - MongoDB, Express, Angular & Nodejs
 
 **Pre requisitos:**
 
@@ -8,7 +8,7 @@ Aplicação desenvolvida para aprimorar os conhecimentos do framework MEAN - Mon
 
 >root: npm start
 
->root/angular-src: ng serve
+>root/angular-src/src: ng serve
 
 >Acessar http://localhost:4200 no navegador
 
