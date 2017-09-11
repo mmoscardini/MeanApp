@@ -1,0 +1,23 @@
+{
+  "name": "mean_app",
+  "version": "1.0.0",
+  "description": "Made with Traversy Media tutorial. Used to learn how to develop a MEAN APP (Mongo, Express, Angular, Node)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*",
+    "pug": "^2.0.0-rc.3"
+  },
+  "author": "Matheus Moscardini",
+  "license": "ISC"
+}
