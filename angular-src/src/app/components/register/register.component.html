@@ -12,9 +12,11 @@
     <label>Email</label>
     <input type="text" [(ngModel)]="email" name="email" class="form-control">
   </div>
-  <div class="form-group">
+  <div class="form-group form-inline">
     <label>Senha</label>
-    <input type="password" [(ngModel)]="password" name="password" class="form-control">
+    <input type="{{passInputType}}" [(ngModel)]="password" name="password" class="form-control" />
+    <a (click)="toggleHideShow()" ></a>
+    <button type="button" (click)="toggleHideShow()" class="form-inline btn btn-info">Esconder/Revelar senha</button>
   </div>
   <input type="submit" name="submit" class="btn btn-primary" value="submit">
 </form>

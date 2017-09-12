@@ -4,6 +4,7 @@ import {AuthService} from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,14 +16,14 @@ export class RegisterComponent implements OnInit {
   username: String;
   email: String;
   password: String;
-  passwordCheckbox: boolean;
+  passInputType: String = 'password';  
 
   //serpre que importar um serviço precisa adicioná-lo ao construtor
   constructor(
     private validateService: ValidateService, 
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router, 
   ) { }
 
   ngOnInit() {
@@ -34,7 +35,7 @@ export class RegisterComponent implements OnInit {
       username: this.username,
       email: this.email,
       password: this.password
-    }
+    }    
 
     //Required Fields
     if (!this.validateService.ValidateRegister(user)){
@@ -60,7 +61,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  hideShowPassword(){
-    console.log(this.passwordCheckbox);
+  toggleHideShow(){
+    if(this.passInputType == 'password'){
+      this.passInputType = 'text';
+    }
+    else {
+      this.passInputType = 'password';
+    }
   }
 }
