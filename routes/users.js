@@ -26,10 +26,10 @@ router.post ('/register', function(req, res, next){
 	//Adicionar o usuário a base de dados, e callback com mensagens de erro ou sucesso
 	User.addUser(newUser, function(err, user){
 		if(err){
-			res.json({sucess: false, msg: 'Failed to register user'});
+			res.json({success: false, msg: 'Falha ao registrar usuário. Porfavor, tente novamente'});
 		}
 		else{
-			res.json({sucess: true, msg: 'User registered'});			
+			res.json({success: true, msg: 'Usuário registrado com sucesso'});			
 		}		
 	});
 });
@@ -45,7 +45,7 @@ router.post ('/authenticate', function(req, res, next){
 		if (err) throw err;
 		//If there is no user send a msg
 		if (!user){
-			return res.json({sucess: false, msg: 'User not found'});
+			return res.json({success: false, msg: 'Usuário não cadastrado'});
 		}
 
 		//Check if password is correct
@@ -61,7 +61,7 @@ router.post ('/authenticate', function(req, res, next){
 
 				//Send sucess msg back if succeded
 				res.json({
-					sucess: true,
+					success: true,
 					token: 'JWT ' +token,
 					//send back object with all info but the pssword
 					user: {
@@ -75,7 +75,7 @@ router.post ('/authenticate', function(req, res, next){
 			//if there is no match
 			else {
 				//send msg
-				return res.json({sucess: false, msg: 'Wrong Password'});				
+				return res.json({success: false, msg: 'Senha incorreta'});				
 			}
 		});
 	});
