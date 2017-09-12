@@ -19,4 +19,7 @@ export class ValidateService {
     return re.test(email);
   }
 
+  //Register User
+
+
 }
