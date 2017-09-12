@@ -49,7 +49,9 @@ require('./config/passport')(passport);
 //Essa pasta contem toda a parte do Angular JS
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.get ('*', (req, res,next)=>{
+	res.sendFile(path.join(__dirname + 'public/index.html'));
+})
 //Lida com requisição get na pasta root
 app.get('/', function(req, res){
 	res.send ('Invalid Endpoint');

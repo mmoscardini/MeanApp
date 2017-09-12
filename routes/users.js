@@ -82,8 +82,9 @@ router.post ('/authenticate', function(req, res, next){
 });
 
 //Profile route. 
-router.get ('/Profile', passport.authenticate('jwt', {session: false}), function(req, res, next){
+router.get ('/profile', passport.authenticate('jwt', {session: false}), function(req, res, next){
 	res.json({user: req.user});
+	//
 });
 
 //Validation route. 

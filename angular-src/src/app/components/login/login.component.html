@@ -1,11 +1,13 @@
-<h2 class="page-header">CADASTRO</h2>
+<h2 class="page-header">Login</h2>
 <form (submit)= "OnLoginSubmit()">
   <div class="form-group">
     <label>Nome de usuário</label>
     <input type="text" [(ngModel)]="username" name="username" class="form-control">
   </div>
+  <div class="form-group">
+    <label>Senha</label>  
+  </div>
   <div class="form-group form-inline">
-    <label>Senha</label>
     <input type="{{passInputType}}" [(ngModel)]="password" name="password" class="form-control" />
     <a (click)="toggleHideShow()" ></a>
     <button type="button" (click)="toggleHideShow()" class="form-inline btn btn-info">Esconder/Revelar senha</button>

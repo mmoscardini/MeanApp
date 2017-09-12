@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-default bg-dark">
-  <a class="navbar-brand" href="#">MEAN App</a>
+  <a class="navbar-brand" href="#">MEAN APP</a>
 
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav mr-auto navbar-left">
@@ -8,13 +8,19 @@
       </li>
     </ul>
     <ul class="nav navbar-nav mr-auto navbar-right">
-      <li class="nav-item">
+        <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
+          <a class="nav-link" [routerLink]="['dashboard']">Dashboard</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
+          <a class="nav-link" [routerLink]="['profile']">Profile</a>
+        </li>
+      <li *ngIf="authService.loggedIn()" class="nav-item">
         <a class="nav-link" (click)="logout()" style="cursor: pointer">Logout</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
+      <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
         <a class="nav-link" [routerLink]="['login']">Login</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
+      <li *ngIf="!authService.loggedIn()"class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
         <a class="nav-link" [routerLink]="['register']">Cadastro</a>
       </li>
     </ul>
