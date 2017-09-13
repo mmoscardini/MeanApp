@@ -9,9 +9,9 @@ const twitter = require ('twitter');
 
 //Twitter Client
 const twitterClient = new twitter({
-	consumer_key: '',
-	consumer_secret: '',
-	bearer_token: ''
+	consumer_key: process.env.CONSUMER_KEY,
+	consumer_secret: process.env.CONSUMER_SECRET,
+	bearer_token: process.env.BEARER_TOKEN
 });
 
 //Este arquivo já está na rota /users.
