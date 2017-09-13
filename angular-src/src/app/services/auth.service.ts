@@ -35,6 +35,12 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  searchOnTwitter(){
+    let headers = new Headers();
+    return this.http.get('http://localhost:3000/users/dashboard')
+      .map(res => res.json());
+  }
+
   loadToken(){
     const token = localStorage.getItem('id_token');
     this.auth = token;

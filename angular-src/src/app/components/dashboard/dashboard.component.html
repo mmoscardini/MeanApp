@@ -1,2 +1,18 @@
-<h2 class="page-header">Dashboard</h2>
-<p>Completar acessando alguma api via ajax</p>
+<h2 class="page-header">Pesquisa no twitter</h2>
+<form (submit)= "OnSearchSubmit()">
+  <div class="form-group">
+    <label>Pesquisar:</label>
+    <input type="text" [(ngModel)]="search" name="search" class="form-control">
+  </div>
+  <input type="submit" name="submit" class="btn btn-primary" value="submit">
+</form>
+
+<div *ngIf="tweets">
+    <h3>Os resultados da pesquisa sobre {{search}} no twitter foram:</h3>
+    <table class="table table-striped">
+        <tr *ngFor='let t of tweets'>
+            <td>{{t.user.name}}</td>
+            <td>{{t.text}}</td>
+        </tr>
+    </table>
+</div>

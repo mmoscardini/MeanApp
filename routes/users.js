@@ -5,14 +5,16 @@ const passport = require ('passport');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const config = require('../config/database');
+const twitter = require ('twitter');
 
-//Este arquivo já está na rota /users.
-
-//Base route. 
-router.get ('/', function(req, res, next){
-	res.send('User Route');
+//Twitter Client
+const twitterClient = new twitter({
+	consumer_key: '',
+	consumer_secret: '',
+	bearer_token: ''
 });
 
+//Este arquivo já está na rota /users.
 //Register route. 
 router.post ('/register', function(req, res, next){
 	//Criar um novo usuário pegando dados do corpo da pagina
@@ -87,9 +89,17 @@ router.get ('/profile', passport.authenticate('jwt', {session: false}), function
 	//
 });
 
-//Validation route. 
-router.get ('/validade', function(req, res, next){
-	res.send('VALIDATION');
+//Tweeter Dahsboard route. 
+router.get ('/dashboard', function(req, res, next){
+	const pesquisa = req.body.search;
+
+	twitterClient.get('search/tweets', {q: 'obama', count: '100'}, function(err, tweets, response) {
+		if (err){
+			console.log('erro:' + err);
+			return false;
+		}
+		res.json({tweets});
+	 });
 });
 
 //Exporta o router. É necessário para o funcionamento das rotas

@@ -44,7 +44,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport')(passport);
 
-
 //Set Static folder 
 //Essa pasta contem toda a parte do Angular JS
 app.use(express.static(path.join(__dirname, 'public')));

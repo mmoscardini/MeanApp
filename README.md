@@ -7,6 +7,7 @@ Aplicação desenvolvida do zero para aprimorar os conhecimentos do framework ME
 **Iniciar:**
 
 >root: npm start
+
 >Acessar http://localhost:3000 no navegador
 
 
@@ -16,4 +17,4 @@ https://github.com/mmoscardini
 
 License MIT (https://opensource.org/licenses/MIT)
 
-Copyright 2017 Matheus M Moscardini
+Copyright 2017 - Matheus M Moscardini
