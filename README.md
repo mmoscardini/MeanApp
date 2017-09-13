@@ -1,5 +1,8 @@
 Aplicação desenvolvida do zero para aprimorar os conhecimentos do framework MEAN - MongoDB, Express, Angular & Nodejs
 
+**Acesso**
+>Essa aplicação está disponivel em: https://mean-app-from-scratch.herokuapp.com/
+
 **Pre requisitos:**
 
 >NodeJS e MongoDB instalados
