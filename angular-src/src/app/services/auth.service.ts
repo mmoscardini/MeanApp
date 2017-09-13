@@ -12,6 +12,7 @@ export class AuthService {
     private http: Http,
     
   ) { }
+  
 
   registerUser(user){
     let headers = new Headers();
