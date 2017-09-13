@@ -7,10 +7,7 @@ Aplicação desenvolvida do zero para aprimorar os conhecimentos do framework ME
 **Iniciar:**
 
 >root: npm start
-
->root/angular-src/src: ng serve
-
->Acessar http://localhost:4200 no navegador
+>Acessar http://localhost:3000 no navegador
 
 
 Autor: Matheus de Miranda Moscardini
