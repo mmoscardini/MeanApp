@@ -10,6 +10,10 @@
 <div *ngIf="tweets">
     <h3>Os resultados da pesquisa sobre {{search}} no twitter foram:</h3>
     <table class="table table-striped">
+        <tr>
+            <td>Usuários</td>
+            <td>Tweet</td>
+        </tr>
         <tr *ngFor='let t of tweets'>
             <td>{{t.user.name}}</td>
             <td>{{t.text}}</td>

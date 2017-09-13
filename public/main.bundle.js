@@ -756,7 +756,7 @@ module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n    <fla
 /***/ 684:
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Pesquisa no twitter</h2>\n<form (submit)= \"OnSearchSubmit()\">\n  <div class=\"form-group\">\n    <label>Pesquisar:</label>\n    <input type=\"text\" [(ngModel)]=\"search\" name=\"search\" class=\"form-control\">\n  </div>\n  <input type=\"submit\" name=\"submit\" class=\"btn btn-primary\" value=\"submit\">\n</form>\n\n<div *ngIf=\"tweets\">\n    <h3>Os resultados da pesquisa sobre {{search}} no twitter foram:</h3>\n    <table class=\"table table-striped\">\n        <tr *ngFor='let t of tweets'>\n            <td>{{t.user.name}}</td>\n            <td>{{t.text}}</td>\n        </tr>\n    </table>\n</div>"
+module.exports = "<h2 class=\"page-header\">Pesquisa no twitter</h2>\n<form (submit)= \"OnSearchSubmit()\">\n  <div class=\"form-group\">\n    <label>Pesquisar:</label>\n    <input type=\"text\" [(ngModel)]=\"search\" name=\"search\" class=\"form-control\">\n  </div>\n  <input type=\"submit\" name=\"submit\" class=\"btn btn-primary\" value=\"submit\">\n</form>\n\n<div *ngIf=\"tweets\">\n    <h3>Os resultados da pesquisa sobre {{search}} no twitter foram:</h3>\n    <table class=\"table table-striped\">\n        <tr>\n            <td>Usuários</td>\n            <td>Tweet</td>\n        </tr>\n        <tr *ngFor='let t of tweets'>\n            <td>{{t.user.name}}</td>\n            <td>{{t.text}}</td>\n        </tr>\n    </table>\n</div>"
 
 /***/ }),
 
