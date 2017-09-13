@@ -22,7 +22,7 @@ mongoose.connection.on('error', function(err){
 
 //Inicializa o app com express e define uma porta como constante
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 //Arquivo para deinição da rota /users , para organização

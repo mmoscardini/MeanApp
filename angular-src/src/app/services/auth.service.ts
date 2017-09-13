@@ -23,7 +23,7 @@ export class AuthService {
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user, {headers:headers})
+    return this.http.post('users/authenticate', user, {headers:headers})
       .map(res => res.json());
   }
 
@@ -31,13 +31,13 @@ export class AuthService {
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.auth);
-    return this.http.get('http://localhost:3000/users/profile', {headers:headers})
+    return this.http.get('users/profile', {headers:headers})
       .map(res => res.json());
   }
 
   searchOnTwitter(){
     let headers = new Headers();
-    return this.http.get('http://localhost:3000/users/dashboard')
+    return this.http.get('users/dashboard')
       .map(res => res.json());
   }
 
